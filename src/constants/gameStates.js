@@ -1,0 +1,3 @@
+export const GAME_STOPPED = 'GAME_STOPPED'
+export const GAME_RUNNING = 'GAME_RUNNING'
+export const GAME_PAUSED = 'GAME_PAUSED'
