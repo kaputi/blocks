@@ -17,23 +17,6 @@ export const mapPixels = (coordMap) => {
   return pixelMap
 }
 
-export const createNewPiece = () => {
-  const id = random(0, pieceData.length - 1)
-
-  // initial
-  const position = 0
-  const x = 5
-  const y = 1
-
-  const { color, pieceMap } = pieceData[id]
-
-  const coordMap = mapCoords(pieceMap[position], x, y)
-
-  const pixelMap = mapPixels(coordMap)
-
-  return { id, color, x, y, position, pixelMap }
-}
-// TODO: claculate piece should do everything
 export const calculatePiece = ({
   id = random(0, pieceData.length - 1),
   position = 0,
