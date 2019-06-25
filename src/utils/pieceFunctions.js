@@ -3,7 +3,9 @@ import blockSize from 'utils/blockSize'
 import random from 'utils/random'
 
 export const mapCoords = (pieceMap, x, y) => {
-  const coordMap = pieceMap.map((pair) => [pair[0] + x, pair[1] + y])
+  const coordMap = pieceMap
+    .map((pair) => [pair[0] + x, pair[1] + y])
+    .filter((coordPair) => coordPair[1] > 0) // removes blocks above the game area
   return coordMap
 }
 
@@ -44,5 +46,5 @@ export const calculatePiece = ({
 
   const pixelMap = mapPixels(coordMap)
 
-  return { id, color, x, y, position, pixelMap }
+  return { id, color, x, y, position, pixelMap, coordMap }
 }
