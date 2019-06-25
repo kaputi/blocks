@@ -8,6 +8,7 @@ const initialState = {
   y: null,
   position: null,
   pixelMap: null,
+  coordMap: null,
   // next piece
   next: null,
   // TODO: placed blocks needs to be somewherre else
