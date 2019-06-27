@@ -12,10 +12,11 @@ const initialState = {
   // next piece
   next: null,
   // TODO: placed blocks needs to be somewherre else
-  placedBLocks: [
+  placedBlocks: [
     { x: 1, y: 18, color: 'green' },
     { x: 1, y: 17, color: 'green' },
     { x: 2, y: 18, color: 'purple' },
+    { x: 5, y: 7, color: 'yellow' },
   ],
 }
 
