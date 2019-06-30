@@ -21,7 +21,7 @@ class Block extends Component {
   }
 
   componentDidUpdate() {
-    console.log('block update')
+    // console.log('block update')
   }
 
   render() {
