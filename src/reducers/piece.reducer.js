@@ -1,4 +1,9 @@
-import { SET_PIECE, SET_NEXT_PIECE } from 'constants/actionTypes'
+import {
+  SET_PIECE,
+  SET_NEXT_PIECE,
+  UPDATE_PLACED_BLOCKS,
+  CLEAR_BLOCKS,
+} from 'constants/actionTypes'
 
 const initialState = {
   // current piece
@@ -12,12 +17,7 @@ const initialState = {
   // next piece
   next: null,
   // TODO: placed blocks needs to be somewherre else
-  placedBlocks: [
-    { x: 1, y: 18, color: 'green' },
-    { x: 1, y: 17, color: 'green' },
-    { x: 2, y: 18, color: 'purple' },
-    { x: 5, y: 7, color: 'yellow' },
-  ],
+  placedBlocks: [],
 }
 
 export default (state = initialState, action) => {
@@ -26,6 +26,14 @@ export default (state = initialState, action) => {
       return { ...state, ...action.payload }
     case SET_NEXT_PIECE:
       return { ...state, next: action.payload }
+    case UPDATE_PLACED_BLOCKS: {
+      return {
+        ...state,
+        placedBlocks: [...state.placedBlocks, ...action.payload],
+      }
+    }
+    case CLEAR_BLOCKS:
+      return { ...state, placedBlocks: [...action.payload] }
     default:
       return state
   }
