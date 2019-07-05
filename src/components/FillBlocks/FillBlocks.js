@@ -15,7 +15,7 @@ const FillBlocks = (props) => {
 
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
-      blockArray.push(<Block x={x * blockSize} y={y * blockSize} color="gray" />)
+      blockArray.push(<Block key={`${x}${y}`} x={x * blockSize} y={y * blockSize} color="gray" />)
     }
   }
 
