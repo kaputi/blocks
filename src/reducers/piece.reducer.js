@@ -3,7 +3,10 @@ import {
   SET_NEXT_PIECE,
   UPDATE_PLACED_BLOCKS,
   CLEAR_BLOCKS,
+  MOVE_PIECE,
 } from 'constants/actionTypes'
+
+import { MOVE_FINISH } from 'constants/moveTypes'
 
 const initialState = {
   // current piece
@@ -18,6 +21,8 @@ const initialState = {
   next: null,
   // TODO: placed blocks needs to be somewherre else
   placedBlocks: [],
+  // Move Piece
+  move: MOVE_FINISH,
 }
 
 export default (state = initialState, action) => {
@@ -34,6 +39,8 @@ export default (state = initialState, action) => {
     }
     case CLEAR_BLOCKS:
       return { ...state, placedBlocks: [...action.payload] }
+    case MOVE_PIECE:
+      return { ...state, move: action.payload }
     default:
       return state
   }

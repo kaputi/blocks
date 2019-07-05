@@ -3,6 +3,7 @@ import {
   SET_PIECE,
   UPDATE_PLACED_BLOCKS,
   CLEAR_BLOCKS,
+  MOVE_PIECE,
 } from 'constants/actionTypes'
 
 export const setPiece = (payload) => ({
@@ -21,5 +22,10 @@ export const updatePlacedBlocks = (payload) => ({
 
 export const clearBlocks = (payload) => ({
   type: CLEAR_BLOCKS,
+  payload,
+})
+
+export const moveAction = (payload) => ({
+  type: MOVE_PIECE,
   payload,
 })
